@@ -1,0 +1,51 @@
+name : Calculator CI/CD
+
+on:
+    push:
+        branches : 
+            - main
+
+    pull_request:
+        branches : 
+            - main
+        
+    workflow_dispatch: #for button
+
+    schedule:
+        - cron : "0 8 * * *" #everyday at 8am
+
+jobs:
+    build: #label for job
+        runs-on : ubuntu-latest
+        steps:
+            - name : Checkout Code
+              uses : actions/checkout@v4
+
+            - name : Setup Node
+              uses : actions/setup-node@v4
+              with:
+                node-version : 20
+            
+            - name : Install Dependencies
+              run : npm install
+
+            - name : Run ESLint
+              run : npm run lint
+
+            - name : Run JestTests
+              run : npm test
+
+            - name : Build Project
+              run : echo "Building Application"
+
+            - name : Deploy Project
+              run : echo "Deploying Successfully"
+
+    nightly-build: #label for nightly build job
+            runs-on: ubuntu-latest
+
+            if: github.event_name == 'schedule'
+
+            steps:
+                - name : Generate report
+                  run: echo "Generating Report"
