@@ -12,7 +12,7 @@ on:
     workflow_dispatch: #for button
 
     schedule:
-        - cron : "*/5 * * * *" #everyday at 8am
+        - cron : "*/5 * * * *" #everyday every 5 min
 
 jobs:
     build: #label for job
