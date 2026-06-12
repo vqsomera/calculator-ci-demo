@@ -4,11 +4,9 @@ test("adds 2+3", () => {
 
     expect(add(2, 3)).toBe(5);
 
-})
-test("adds 2+2", () => {
-
-    //expect(add(2, 2)).toBe(5);
-    expect(add(2, 2)).toBe(4);
+});
 
 
+test('multiplies two numbers', () => {
+    expect(multiply(2, 3)).toBe(6);
 });
