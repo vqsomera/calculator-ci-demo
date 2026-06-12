@@ -7,6 +7,8 @@ test("adds 2+3", () => {
 })
 test("adds 2+2", () => {
 
-    expect(add(2, 2)).toBe(5);
+    //expect(add(2, 2)).toBe(5);
+    expect(add(2, 2)).toBe(4);
+
 
 });
