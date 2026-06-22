@@ -4,7 +4,7 @@ const { add, multiply, subtract, divide, square, cube } = require("./calculator"
 //Basic tests:
 test("add two numbers: 10+5 = 15", () => {
 
-    expect(add(10, 5)).toBe(100); //intentional failure
+    expect(add(10, 5)).toBe(15); //fixed
 
 });
 
